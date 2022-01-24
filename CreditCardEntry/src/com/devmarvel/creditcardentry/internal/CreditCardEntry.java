@@ -192,7 +192,7 @@ public class CreditCardEntry extends HorizontalScrollView implements
                 @Override
                 public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                     if (EditorInfo.IME_ACTION_DONE == actionId) {
-                        onZipCodeValid();
+                        onZipCodeValid("");
                         return true;
                     }
                     return false;
@@ -252,8 +252,8 @@ public class CreditCardEntry extends HorizontalScrollView implements
     }
 
     @Override
-    public void onZipCodeValid() {
-        nextField(zipCodeText, null);
+    public void onZipCodeValid(String remainder) {
+        nextField(zipCodeText, remainder);
     }
 
     @Override

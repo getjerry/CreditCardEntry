@@ -50,7 +50,7 @@ public class ZipCodeText extends CreditEntryFieldBase {
         if (s.toString().matches("^\\d+$")) {
             if (s.length() == maxChars) {
                 setValid(true);
-                delegate.onZipCodeValid();
+                delegate.onZipCodeValid(s.toString());
             } else {
                 setValid(false);
             }
@@ -60,9 +60,10 @@ public class ZipCodeText extends CreditEntryFieldBase {
         } else {
             if (s.length() > 3) {
                 setValid(true);
+								delegate.onZipCodeValid(s.toString());
             }
             if (s.length() == maxChars && maxChars > 0) {
-                delegate.onZipCodeValid();
+								delegate.onZipCodeValid(s.toString());
             } else {
                 setValid(false);
             }
