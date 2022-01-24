@@ -21,7 +21,7 @@ public interface CreditCardFieldDelegate {
   // Image should flip to back for security code
   void onSecurityCodeValid(String remainder);
 
-  void onZipCodeValid();
+  void onZipCodeValid(String remainder);
 
   void onBadInput(EditText field);
 
